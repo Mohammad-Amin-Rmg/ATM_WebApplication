@@ -1,0 +1,34 @@
+﻿@using ATM_WebApplication.Dto;
+@model TransactionDto;
+@{
+    ViewData["Title"] = "Deposit";
+}
+
+<h2 class="text-center">واریز به حساب</h2>
+
+<div class="text-center">
+    <form asp-action="Deposit" method="post">
+        <div class="form-group">
+            <label asp-for="Number">شماره حساب</label>
+            <input type="number" asp-for="Number" />
+            <span asp-validation-for="Number" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Number">مبلغ</label>
+            <input type="number" name="amount" asp-for="Amount" step="0.01" />
+            <span asp-validation-for="Number" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"> واریز </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

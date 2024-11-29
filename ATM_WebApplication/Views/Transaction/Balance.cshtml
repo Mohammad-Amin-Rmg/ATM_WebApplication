@@ -1,0 +1,20 @@
+﻿@using ATM_WebApplication.Dto;
+@model AccountBalanceDto;
+@{
+    ViewData["Title"] = "Balance";
+}
+
+<h2 class="text-center">موجودی حساب</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <p>@Model.Balance:موجودی</p>
+        </div>
+        <div class="col-sm">
+            <p> @Model.HolderName:نام</p>
+        </div>
+        <div class="col-sm">
+            <a asp-controller="Account" asp-action="Dashboard">بازگشت به داشبورد</a>
+        </div>
+    </div>
+</div>

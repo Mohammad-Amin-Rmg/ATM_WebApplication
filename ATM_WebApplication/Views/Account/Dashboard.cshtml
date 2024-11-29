@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "داشبورد";
+}
+
+<h2 class="text-center">داشبورد</h2>
+
+<p class="text-center">خوش آمدید!</p>
+
+<ul class="text-center">
+    <li><a asp-controller="Transaction" asp-action="Balance">نمایش موجودی</a></li>
+    <li><a asp-controller="Transaction" asp-action="Deposit">واریز</a></li>
+    <li><a asp-controller="Transaction" asp-action="Withdraw">برداشت</a></li>
+</ul>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

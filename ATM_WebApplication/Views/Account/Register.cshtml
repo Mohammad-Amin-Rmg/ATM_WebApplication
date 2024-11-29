@@ -1,0 +1,44 @@
+﻿@using ATM_WebApplication.Dto;
+@model CreateAccountDto;
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="text-center">ثبت نام</h1>
+
+<div class="text-center">
+    <form asp-action="Register" method="post">
+        <div class="form-group">
+            <label asp-for="Number">شماره حساب</label>
+            <input asp-for="Number" class="form-control" />
+            <span asp-validation-for="Number" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Balance">موجودی</label>
+            <input asp-for="Balance" class="form-control" />
+            <span asp-validation-for="Balance" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="HolderName">نام</label>
+            <input asp-for="HolderName" class="form-control" />
+            <span asp-validation-for="HolderName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Pin">رمز عبور</label>
+            <input asp-for="Pin" class="form-control" type="password" />
+            <span asp-validation-for="Pin" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">ثبت نام </button>
+    </form>
+</div>
+
+@section Scripts {
+
+    @{
+       await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
